@@ -1,10 +1,13 @@
 function updateCounter() {
     const counter = document.getElementById('counter');
     //increment the counter everytime user visits the page by storing in local storage
-    let count=1;
-    count = localStorage.getItem('visiterCount');
-    count=parseInt(count);
-    count++;
+    let count = localStorage.getItem('visiterCount');
+    if(count==null){
+        count=parseInt(1);
+    }
+    else{
+    count=parseInt(count)+1;
+    }
 
     
     /**
